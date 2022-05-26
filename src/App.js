@@ -1,11 +1,20 @@
+import FeedbackList from "./componants/FeedbackList";
+import Header from "./componants/Header";
+import Form from "./componants/Form";
+import  {items}  from "./componants/items";
+import { useState } from "react";
+
 
 function App() {
+  const [feedbacks, setfeedbacks] = useState(items)
+
+console.log(items)
   return (
-    <div className="App">
-      <header className="App-header">
-       hello
-      </header>
-    </div>
+    <>
+      <Header />
+      <Form/>
+      <FeedbackList feedbacks = {feedbacks}/>
+    </>
   );
 }
 
