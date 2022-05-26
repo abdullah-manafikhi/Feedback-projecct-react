@@ -7,12 +7,19 @@ import { useState } from "react";
 
 function App() {
   const [feedbacks, setfeedbacks] = useState(items)
-
+  
 console.log(items)
   return (
     <>
       <Header />
-      <Form/>
+      <Form feedbacks={feedbacks} addFeedback={ (text , rating) => {
+        console.log(feedbacks.length)
+        setfeedbacks([{
+          id:(feedbacks.length+1),
+          text: text,
+          rating : Number(rating)
+        }, ...feedbacks])
+      } }/>
       <FeedbackList feedbacks = {feedbacks}/>
     </>
   );

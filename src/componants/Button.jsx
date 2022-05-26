@@ -1,9 +1,10 @@
 
 
-function Button({children ,className , click}) {
+function Button({children ,className , click , btnDisabled}) {
+
   return (
     <div>
-      <button onClick={click} className={className} type="submit">{children}</button>
+      <button style={{opacity: (btnDisabled)? '.7' : '1'}} className={className} onClick={click} disabled={btnDisabled} type="submit">{children}</button>
     </div>
   )
 }

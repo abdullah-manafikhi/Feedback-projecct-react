@@ -1,6 +1,7 @@
 body{
   margin: 0rem;
   padding: 0rem;
+  padding-bottom: 2rem;
   width: 100%;
   background-color: rgb(0, 0, 51);
   color: white;
@@ -17,13 +18,13 @@ header{
 }
 
 .card{
-  min-height: 10rem;
+  min-height: 7rem;
   max-width: 40rem;
   background-color: white;
   color: black !important;
   margin: auto ;
   margin-top: 3rem;
-  padding: 2rem;
+  padding: 1.5rem;
   display: grid;
   display: -ms-inline-grid  ;
   align-items: center;
@@ -67,12 +68,12 @@ header{
 .feedbackItem__row1{
   height: 2rem;
   position: relative;
-  top: -5rem;
+  top: -4rem;
 }
 
 .feedbackItem__row2{
   position: relative;
-  top: -2.5rem;
+  top: -1.5rem;
 }
 
 .form__input{
@@ -137,7 +138,14 @@ label{
   font-size: 40px;
   color: grey;
   margin : 0rem .5rem;
+}
 
+.rating__stats{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 @media (max-width: 500px) {
@@ -147,5 +155,12 @@ label{
     -moz-transform: translate(0% , 0%);
     -ms-transform: translate(0% , 0%);
     -o-transform: translate(0% , 0%);
+  }
+}
+
+@media (max-width: 315px) {
+  label{
+    font-size: 30px;
+    margin: 0;
   }
 }
