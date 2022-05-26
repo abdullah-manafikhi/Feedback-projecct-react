@@ -8,19 +8,30 @@ import { useState } from "react";
 function App() {
   const [feedbacks, setfeedbacks] = useState(items)
   
-console.log(items)
+  const addFeedback = (text , rating) => {
+    setfeedbacks([{
+      id:(feedbacks.length+1),
+      text: text,
+      rating : Number(rating)
+    }, ...feedbacks])
+  }
+
+  const deleteFeedback= (id) => {
+    setfeedbacks(feedbacks.filter((feedback) => {
+      if(feedback.id !== id){
+        return feedback
+      }
+      else{
+        return
+      }
+    }))
+  }
+
   return (
     <>
       <Header />
-      <Form feedbacks={feedbacks} addFeedback={ (text , rating) => {
-        console.log(feedbacks.length)
-        setfeedbacks([{
-          id:(feedbacks.length+1),
-          text: text,
-          rating : Number(rating)
-        }, ...feedbacks])
-      } }/>
-      <FeedbackList feedbacks = {feedbacks}/>
+      <Form feedbacks={feedbacks} addFeedback={ addFeedback }/>
+      <FeedbackList deleteId ={(id) => {deleteFeedback(id)}} feedbacks = {feedbacks}/>
     </>
   );
 }

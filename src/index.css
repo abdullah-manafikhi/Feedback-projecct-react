@@ -65,6 +65,13 @@ header{
   -o-border-radius: 50%;
 }
 
+.card__trash{
+  position: relative;
+  top: -1rem;
+  width: 2rem;
+  float: right;
+}
+
 .feedbackItem__row1{
   height: 2rem;
   position: relative;

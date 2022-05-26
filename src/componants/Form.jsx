@@ -12,18 +12,15 @@ function Form({addFeedback , feedbacks}) {
 
     const handleClick = (e) => {
         e.preventDefault()
-
         addFeedback(text , rating)
     }
 
     let rateAvr = feedbacks.reduce((avr , feedback) => {
-        console.log(typeof avr)
        return avr +feedback.rating
     }, 0)
 
      rateAvr = rateAvr/feedbacks.length
      rateAvr = rateAvr.toFixed(1)
-    console.log(typeof rateAvr)
    
 
     const handleChange = (e) => {
@@ -51,7 +48,6 @@ function Form({addFeedback , feedbacks}) {
         <div className="rating__stats">
             <span>{feedbacks.length} reviews</span>
             <span>{rateAvr}</span>
-            {console.log(typeof rateAvr)}
         </div>
     </>
   )

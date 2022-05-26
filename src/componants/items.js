@@ -7,12 +7,12 @@ export const items = [
     {
         id:2,
         text:'this dummy Feedback for Your demo',
-        rating:5
+        rating:2
     },
     {
         id:3,
         text:'this dummy Feedback for Your demo',
-        rating:5
+        rating:4
     },
     {
         id:4,
@@ -22,6 +22,6 @@ export const items = [
     {
         id:5,
         text:'this dummy Feedback for Your demo',
-        rating:5
+        rating:3
     }
 ]
