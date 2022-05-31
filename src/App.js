@@ -22,7 +22,7 @@ function App() {
         return feedback
       }
       else{
-        return
+        return "npm run build"
       }
     }))
   }
