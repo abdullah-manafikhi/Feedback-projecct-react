@@ -37,7 +37,7 @@ function Form({addFeedback , feedbacks}) {
     }
 
   return (
-    <div style={{padding:'0rem 2rem'}}>
+    <div style={{padding:'0rem .5rem'}}>
         <Card>
         <h2>Please! rate our website to consider your opinion while improving it</h2>
         <Rating rating={(rate) => {setrating(rate)}} />
