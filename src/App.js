@@ -17,14 +17,19 @@ function App() {
   }
 
   const deleteFeedback= (id) => {
-    setfeedbacks(feedbacks.filter((feedback) => {
-      if(feedback.id !== id){
-        return feedback
-      }
-      else{
+    console.log(feedbacks)
+    const x = feedbacks.filter((feedback) => {
+      if(feedback.id === id){
         return 
       }
-    }))
+      else{
+        console.log(feedback.id)
+        return feedback
+      }
+    })
+    console.log(x)
+    setfeedbacks(x)
+    console.log(feedbacks)
   }
 
   return (

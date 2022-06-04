@@ -1,5 +1,4 @@
 import Card from "./Card"
-import { items } from "./items"
 import {FaTrash} from 'react-icons/fa'
 
 function FeedbackItem({id , text , rating , deleteId}) {
@@ -9,7 +8,7 @@ function FeedbackItem({id , text , rating , deleteId}) {
   }
 
   return(
-      <>
+      <div style = {{ padding:'0rem 2rem' }}>
         <Card>
             <div className='feedbackItem__row1'>
                 <div className='card__rating'>{rating}</div>
@@ -19,7 +18,7 @@ function FeedbackItem({id , text , rating , deleteId}) {
                 <p className="card__text">{text}</p>
             </div>
         </Card>
-      </>
+      </div>
   )
  
 }
