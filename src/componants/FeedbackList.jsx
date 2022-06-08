@@ -1,14 +1,17 @@
 import FeedbackItem from "./FeedbackItem"
-import {motion ,AnimatePresence} from 'framer-motion'
+import {useContext} from 'react'
+import FeedbackContext from "./contexts/FeedbackContext"
 
-function FeedbackList({feedbacks , deleteId}) {
+function FeedbackList({ deleteId}) {
 
+  let feedbacks = useContext(FeedbackContext)
+  feedbacks = feedbacks.feedback
 
   return (
     <div>  
-        {feedbacks.map(feedback=> (
-          <div>
-            <FeedbackItem key={feedback.id}  deleteId={(id) => {deleteId(id)}} id ={feedback.id} text={feedback.text} rating={feedback.rating} />
+        {feedbacks.map(item=> (
+          <div key={item.id}>
+            <FeedbackItem key={item.id}  deleteId={(id) => {deleteId(id)}} id ={item.id} text={item.text} rating={item.rating} />
           </div>
           )
         )

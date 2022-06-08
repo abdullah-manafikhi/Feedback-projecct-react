@@ -1,9 +1,13 @@
 import Card from "./Card"
 import Button from "./Button"
 import Rating from "./Rating";
-import {useState} from "react"
+import {useState , useContext} from "react"
+import FeedbackContext from "./contexts/FeedbackContext";
 
-function Form({addFeedback , feedbacks}) {
+function Form({addFeedback}) {
+
+    let feedbacks = useContext(FeedbackContext)
+    feedbacks = feedbacks.feedback
 
     const [message, setmessage] = useState("")
     const [text, settext] = useState(" ")

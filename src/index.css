@@ -35,6 +35,7 @@ header{
   -ms-border-radius: 2rem;
   -o-border-radius: 2rem;
 }
+
 .card:after{
   content:'';
   clear:both;
@@ -153,6 +154,23 @@ label{
   margin: 2rem;
   font-size: 26px;
   font-weight: 700;
+}
+
+.about__icon{
+  font-size: 2.5rem;
+  position: fixed ;
+  bottom:1rem ;
+  right: .5rem;
+  color:rgb(250, 139, 157) !important ;
+  
+}
+
+.Link{
+  color: rgb(250, 139, 157) ;
+}
+
+.Link:focus{
+  color: rgb(250, 139, 157) ;
 }
 
 @media (max-width: 500px) {
