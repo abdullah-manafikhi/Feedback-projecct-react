@@ -4,14 +4,13 @@ import FeedbackContext from "./contexts/FeedbackContext"
 
 function FeedbackList({ deleteId}) {
 
-  let feedbacks = useContext(FeedbackContext)
-  feedbacks = feedbacks.feedback
+  let {feedbacks} = useContext(FeedbackContext)
 
   return (
     <div>  
         {feedbacks.map(item=> (
           <div key={item.id}>
-            <FeedbackItem key={item.id}  deleteId={(id) => {deleteId(id)}} id ={item.id} text={item.text} rating={item.rating} />
+            <FeedbackItem key={item.id} id ={item.id} text={item.text} rating={item.rating} />
           </div>
           )
         )

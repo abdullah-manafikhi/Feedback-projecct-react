@@ -1,18 +1,21 @@
 import Card from "./Card"
-import {FaTrash} from 'react-icons/fa'
+import {FaTrash , FaEdit} from 'react-icons/fa'
+import {useContext , useEffect} from 'react'
+import FeedbackContext from "./contexts/FeedbackContext"
 
-function FeedbackItem({id , text , rating , deleteId}) {
+function FeedbackItem({id , text , rating}) {
 
-  const handleDelete = () => {
-    deleteId(id)
-  }
+  let {deleteFeedback , editFeedback , feedbackEdit ,feedbacks} = useContext(FeedbackContext)
+
+  
 
   return(
       <div style = {{ padding:'0rem 2rem' }}>
         <Card>
             <div className='feedbackItem__row1'>
                 <div className='card__rating'>{rating}</div>
-                <div onClick={handleDelete} className='card__trash'><FaTrash /></div>
+                <div onClick={() => {deleteFeedback(id)} }className='card__trash__edit'><FaTrash /></div>
+                <div onClick={() => {editFeedback(feedbacks[id-1])}} className='card__trash__edit'><FaEdit /></div>
             </div>
             <div  className='feedbackItem__row2'>
                 <p className="card__text">{text}</p>

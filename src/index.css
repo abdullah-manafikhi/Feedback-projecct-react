@@ -66,7 +66,7 @@ header{
   -o-border-radius: 50%;
 }
 
-.card__trash{
+.card__trash__edit{
   position: relative;
   top: -1rem;
   width: 2rem;

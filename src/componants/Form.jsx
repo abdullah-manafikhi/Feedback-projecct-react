@@ -1,27 +1,60 @@
 import Card from "./Card"
 import Button from "./Button"
-import Rating from "./Rating";
-import {useState , useContext} from "react"
-import FeedbackContext from "./contexts/FeedbackContext";
+import Rating from "./Rating"
+import {useState , useContext ,useEffect} from "react"
+import FeedbackContext from "./contexts/FeedbackContext"
+import {FaStar} from 'react-icons/fa'
 
-function Form({addFeedback}) {
 
-    let feedbacks = useContext(FeedbackContext)
-    feedbacks = feedbacks.feedback
+function Form() {
+
+    let {feedbacks , feedbackEdit} = useContext(FeedbackContext)
 
     const [message, setmessage] = useState("")
-    const [text, settext] = useState(" ")
+    const [text, settext] = useState("")
     const [rating, setrating] = useState(6)
     const [btnDisabled, setbtnDisabled] = useState(true)
 
+    useEffect(() => {
+        if(feedbackEdit.edit){
+          console.log("success")
+      }
+    }, [feedbackEdit])
+
     const handleClick = (e) => {
         e.preventDefault()
-        addFeedback(text , rating)
+        feedbacks(text , rating)
     }
 
-    let rateAvr = feedbacks.reduce((avr , feedback) => {
-       return avr +feedback.rating
-    }, 0)
+    const handleRatingHover = (e) =>{
+        let currentStar = e.currentTarget.attributes[0].value
+        setrating(currentStar) 
+        let ratings = e.currentTarget.parentNode.children
+
+        for( let item of ratings){
+            if(item.attributes[0].value === currentStar){
+                item.style.color = 'gold'
+                break
+            }
+          item.style.color = 'gold'
+      }
+
+      if( text.length <  10){
+        console.log("failed" + currentStar + "  " + rating)
+        setmessage("You have to choose rating and to enter at least 10 charecters")
+        setbtnDisabled(true)
+        }
+        else if(text.length >= 10){
+            console.log("success")
+        setmessage("")
+        setbtnDisabled(false)
+        }
+      
+    } 
+
+    let rateAvr = feedbacks.reduce((avr , item) => {
+         return avr+(item.rating)
+    },0)
 
      rateAvr = rateAvr/feedbacks.length
      rateAvr = rateAvr.toFixed(1)
@@ -29,13 +62,13 @@ function Form({addFeedback}) {
 
     const handleChange = (e) => {
         var value = e.currentTarget.value.trim()
-       if( value.length <  10){
+        settext(value)
+       if( value.length <  10 || rating === 6){
            setmessage("You have to choose rating and to enter at least 10 charecters")
            setbtnDisabled(true)
        }
        else if(value.length >= 10 && rating !== "6"){
            setmessage(" ")
-           settext(value)
            setbtnDisabled(false)
         }
     }
@@ -44,8 +77,19 @@ function Form({addFeedback}) {
     <div style={{padding:'0rem .5rem'}}>
         <Card>
         <h2>Please! rate our website to consider your opinion while improving it</h2>
-        <Rating rating={(rate) => {setrating(rate)}} />
-        <input onChange={handleChange} className='form__input' type="text" name="" id="formInput" placeholder="Your Feedback goes here " />
+        <div className='rating__div'>
+            <input type="radio" name="rating" id="1" value='1' />
+            <label onClick={handleRatingHover} htmlFor="1"><FaStar/></label>
+            <input type="radio" name="rating" id="2" value='2' />
+            <label  onClick={handleRatingHover} htmlFor="2"><FaStar/></label>
+            <input type="radio" name="rating" id="3"  value='3' />
+            <label  onClick={handleRatingHover} htmlFor="3"><FaStar/></label>
+            <input type="radio" name="rating" id="4" value='4' />
+            <label  onClick={handleRatingHover} htmlFor="4"><FaStar/></label>
+            <input type="radio" name="rating" id="5" value='5' />
+            <label  onClick={handleRatingHover} htmlFor="5"><FaStar/></label>
+        </div>
+        <input onChange={handleChange} className='form__input' type="text" value={text} id="formInput" placeholder="Your Feedback goes here " />
         <Button click={handleClick} className='form__btn' btnDisabled = {btnDisabled}>SEND</Button>
         <p className="form__msg">{message}</p>
         </Card>

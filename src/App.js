@@ -10,31 +10,6 @@ import {FeedbackProvider} from './componants/contexts/FeedbackContext'
 
 
 function App() {
-  const [feedbacks, setfeedbacks] = useState(items)
-  
-  const addFeedback = (text , rating) => {
-    setfeedbacks([{
-      id:(feedbacks.length+1),
-      text: text,
-      rating : Number(rating)
-    }, ...feedbacks])
-  }
-
-  const deleteFeedback= (id) => {
-    console.log(feedbacks)
-    const x = feedbacks.filter((feedback) => {
-      if(feedback.id === id){
-        return 
-      }
-      else{
-        console.log(feedback.id)
-        return feedback
-      }
-    })
-    console.log(x)
-    setfeedbacks(x)
-    console.log(feedbacks)
-  }
 
   return (
     <>
@@ -46,8 +21,8 @@ function App() {
               path='/'
               element={
                 <>
-                  <Form addFeedback={ addFeedback }/>
-                  <FeedbackList deleteId ={(id) => {deleteFeedback(id)}}/>
+                  <Form />
+                  <FeedbackList />
                 </>
               } />
             
