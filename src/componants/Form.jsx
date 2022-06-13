@@ -1,6 +1,5 @@
 import Card from "./Card"
 import Button from "./Button"
-import Rating from "./Rating"
 import {useState , useContext ,useEffect} from "react"
 import FeedbackContext from "./contexts/FeedbackContext"
 import {FaStar} from 'react-icons/fa'
@@ -8,7 +7,7 @@ import {FaStar} from 'react-icons/fa'
 
 function Form() {
 
-    let {feedbacks , feedbackEdit} = useContext(FeedbackContext)
+    let {feedbacks , feedbackEdit ,addFeedback , feedbackUpdate} = useContext(FeedbackContext)
 
     const [message, setmessage] = useState("")
     const [text, settext] = useState("")
@@ -17,39 +16,52 @@ function Form() {
 
     useEffect(() => {
         if(feedbackEdit.edit){
-          console.log("success")
+          settext(feedbackEdit.item.text)
+          setrating(feedbackEdit.item.rating)
+          console.log(rating)
+
       }
     }, [feedbackEdit])
 
     const handleClick = (e) => {
         e.preventDefault()
-        feedbacks(text , rating)
+        if(feedbackEdit.edit === true){
+            console.log("somethin")
+            feedbackUpdate(feedbackEdit.item.id , text , rating)
+        }
+        else {addFeedback(text , rating)}
     }
 
-    const handleRatingHover = (e) =>{
-        let currentStar = e.currentTarget.attributes[0].value
-        setrating(currentStar) 
-        let ratings = e.currentTarget.parentNode.children
-
-        for( let item of ratings){
-            if(item.attributes[0].value === currentStar){
+    useEffect(() => {
+        if(rating !== 6){
+        let currentStar = rating
+        let stars = document.querySelectorAll("label")
+        console.log(currentStar)
+        // remake the stars grey if you changed the rating
+        for( let item of stars){item.style.color = 'grey' }
+        for( let item of stars){
+            if(item.attributes[0].value == currentStar){
+                console.log("success")
                 item.style.color = 'gold'
                 break
             }
           item.style.color = 'gold'
       }
 
-      if( text.length <  10){
+      if( text.trim().length <  10){
         console.log("failed" + currentStar + "  " + rating)
         setmessage("You have to choose rating and to enter at least 10 charecters")
         setbtnDisabled(true)
         }
-        else if(text.length >= 10){
+        else if(text.trim().length >= 10){
             console.log("success")
         setmessage("")
         setbtnDisabled(false)
-        }
-      
+        }}
+    } , [rating])
+
+    const handleRatingHover = (e) =>{
+      setrating(e.currentTarget.attributes[0].value)
     } 
 
     let rateAvr = feedbacks.reduce((avr , item) => {
@@ -61,13 +73,13 @@ function Form() {
    
 
     const handleChange = (e) => {
-        var value = e.currentTarget.value.trim()
+        var value = e.currentTarget.value
         settext(value)
-       if( value.length <  10 || rating === 6){
+       if( value.trim().length <  10 || rating === 6){
            setmessage("You have to choose rating and to enter at least 10 charecters")
            setbtnDisabled(true)
        }
-       else if(value.length >= 10 && rating !== "6"){
+       else if(value.trim().length >= 10 && rating !== "6"){
            setmessage(" ")
            setbtnDisabled(false)
         }

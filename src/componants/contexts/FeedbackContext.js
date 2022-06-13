@@ -12,7 +12,22 @@ export const FeedbackProvider = ({children}) => {
             edit:false
         })
 
-        const deleteFeedback= (id) => {
+        let feedbackUpdate = (updId , updText , updRating) => {
+          const updatedFeed = feedbacks.map((feedback) => {
+                if(feedback.id == updId){
+                    return {
+                        id: updId,
+                        text: updText,
+                        rating: updRating
+                    }
+                }
+                else return feedback
+            })
+            console.log(updatedFeed)
+            setfeedbacks(updatedFeed)
+        }
+
+        const deleteFeedback= (id) => { 
         const x = feedbacks.filter((item) => (item.id !== id))
         setfeedbacks(x)
         }
@@ -26,7 +41,6 @@ export const FeedbackProvider = ({children}) => {
         }
 
         const editFeedback = (item) => {
-            console.log(item)
             setfeedbackEdit({
                 item:item,
                 edit:true
@@ -38,6 +52,7 @@ export const FeedbackProvider = ({children}) => {
         deleteFeedback,
         addFeedback,
         editFeedback,
+        feedbackUpdate,
         feedbackEdit,
     }}>
         {children}
