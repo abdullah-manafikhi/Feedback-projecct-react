@@ -65,7 +65,7 @@ function Form() {
     } 
 
     let rateAvr = feedbacks.reduce((avr , item) => {
-         return avr+(item.rating)
+         return avr+(+item.rating)
     },0)
 
      rateAvr = rateAvr/feedbacks.length

@@ -14,16 +14,15 @@ export const FeedbackProvider = ({children}) => {
 
         let feedbackUpdate = (updId , updText , updRating) => {
           const updatedFeed = feedbacks.map((feedback) => {
-                if(feedback.id == updId){
+                if(feedback.id === updId){
                     return {
-                        id: updId,
+                        id: parseInt(updId , 10),
                         text: updText,
                         rating: updRating
                     }
                 }
                 else return feedback
             })
-            console.log(updatedFeed)
             setfeedbacks(updatedFeed)
         }
 
