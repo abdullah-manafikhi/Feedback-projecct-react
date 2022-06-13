@@ -18,15 +18,13 @@ function Form() {
         if(feedbackEdit.edit){
           settext(feedbackEdit.item.text)
           setrating(feedbackEdit.item.rating)
-          console.log(rating)
-
       }
     }, [feedbackEdit])
 
     const handleClick = (e) => {
         e.preventDefault()
         if(feedbackEdit.edit === true){
-            console.log("somethin")
+            feedbackEdit.edit = false
             feedbackUpdate(feedbackEdit.item.id , text , rating)
         }
         else {addFeedback(text , rating)}
@@ -36,12 +34,10 @@ function Form() {
         if(rating !== 6){
         let currentStar = rating
         let stars = document.querySelectorAll("label")
-        console.log(currentStar)
         // remake the stars grey if you changed the rating
         for( let item of stars){item.style.color = 'grey' }
         for( let item of stars){
             if(item.attributes[0].value == currentStar){
-                console.log("success")
                 item.style.color = 'gold'
                 break
             }
@@ -49,12 +45,10 @@ function Form() {
       }
 
       if( text.trim().length <  10){
-        console.log("failed" + currentStar + "  " + rating)
         setmessage("You have to choose rating and to enter at least 10 charecters")
         setbtnDisabled(true)
         }
         else if(text.trim().length >= 10){
-            console.log("success")
         setmessage("")
         setbtnDisabled(false)
         }}
