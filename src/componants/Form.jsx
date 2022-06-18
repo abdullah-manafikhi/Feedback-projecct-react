@@ -30,6 +30,8 @@ function Form() {
         else {addFeedback(text , rating)}
     }
 
+    // selecting rating
+
     useEffect(() => {
         if(rating !== 6){
         let currentStar = rating

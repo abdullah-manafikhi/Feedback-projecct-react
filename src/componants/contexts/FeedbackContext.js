@@ -1,16 +1,24 @@
-import  {createContext , useState} from 'react'
+import  {createContext , useState ,useEffect} from 'react'
 import { DefaultContext } from 'react-icons/lib'
-import { items } from '../items'
 
 
 const FeedbackContext = createContext()
 
 export const FeedbackProvider = ({children}) => {
-        const [feedbacks, setfeedbacks] = useState(items)  
+        const [feedbacks, setfeedbacks] = useState([])  
         const [feedbackEdit, setfeedbackEdit] = useState({
             item:{},
             edit:false
         })
+        useEffect(() => {
+            fetchFeedback()
+        } , [])
+
+        const fetchFeedback = async () => {
+            const response = await fetch("http://localhost:5000/feedbacks")
+            const data = await response.json()
+            setfeedbacks(data)
+        }
 
         let feedbackUpdate = (updId , updText , updRating) => {
           const updatedFeed = feedbacks.map((feedback) => {
@@ -31,13 +39,19 @@ export const FeedbackProvider = ({children}) => {
         setfeedbacks(x)
         }
 
-        const addFeedback = (text , rating) => {
-        setfeedbacks([{
-            id:(feedbacks.length+1),
-            text: text,
-            rating : Number(rating)
-         }, ...feedbacks])
-        }
+        const addFeedback = async (text , rating) => {
+            const response = await fetch("http://localhost:5000/feedbacks" ,{
+                method:'POST',
+                headers: {
+                    'Content-Type' : 'application/json',
+                },
+                body: JSON.stringify({text: text , rating: +rating}),
+            }
+            )
+            const data = await response.json()
+            console.log(data)
+            setfeedbacks([data, ...feedbacks])
+            }
 
         const editFeedback = (item) => {
             setfeedbackEdit({

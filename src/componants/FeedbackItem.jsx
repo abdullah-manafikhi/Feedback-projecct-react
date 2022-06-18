@@ -5,7 +5,7 @@ import FeedbackContext from "./contexts/FeedbackContext"
 
 function FeedbackItem({id , text , rating}) {
 
-  let {deleteFeedback , editFeedback , feedbackEdit ,feedbacks} = useContext(FeedbackContext)
+  let {deleteFeedback , editFeedback ,feedbacks} = useContext(FeedbackContext)
 
   
 

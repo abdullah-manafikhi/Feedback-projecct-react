@@ -1,0 +1,39 @@
+{
+  "feedbacks": [
+    {
+      "id": 1,
+      "rating": 3,
+      "text": "this the mock backend feedback 1"
+    },
+    {
+      "id": 2,
+      "rating": 5,
+      "text": "this the mock backend feedback 2"
+    },
+    {
+      "id": 3,
+      "rating": 4,
+      "text": "this the mock backend feedback 3"
+    },
+    {
+      "text": "THIS IS AN ADDED FEEDBACKF",
+      "rating": 4,
+      "id": 4
+    },
+    {
+      "text": "THIS IS AN ADDED FEEDBACKFsdf",
+      "rating": 4,
+      "id": 5
+    },
+    {
+      "text": "THIS IS AN ADDED FEEDBACKFsdf",
+      "rating": 4,
+      "id": 6
+    },
+    {
+      "text": "this is a new feedback that is dummy one",
+      "rating": 5,
+      "id": 7
+    }
+  ]
+}
