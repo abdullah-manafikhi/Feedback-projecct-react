@@ -20,23 +20,30 @@ export const FeedbackProvider = ({children}) => {
             setfeedbacks(data)
         }
 
-        let feedbackUpdate = (updId , updText , updRating) => {
-          const updatedFeed = feedbacks.map((feedback) => {
+        let feedbackUpdate = async (updId , updText , updRating) => {
+            const response = await fetch(`http://localhost:5000/feedbacks/${updId}` , {
+                method : 'PUT',
+                headers: {
+                    'Content-Type' : 'application/json',               
+                 },
+                 body: JSON.stringify({id: updId, text: updText ,rating: updRating})
+            })
+            const data = await response.json()
+
+            const updatedFeed = feedbacks.map((feedback) => {
                 if(feedback.id === updId){
-                    return {
-                        id: parseInt(updId , 10),
-                        text: updText,
-                        rating: updRating
-                    }
+                    return data
                 }
                 else return feedback
             })
             setfeedbacks(updatedFeed)
         }
 
-        const deleteFeedback= (id) => { 
-        const x = feedbacks.filter((item) => (item.id !== id))
-        setfeedbacks(x)
+        const deleteFeedback= async (id) => { 
+        if(window.confirm("Are you sure you want to delete this feedback"))  {
+            await fetch(`http://localhost:5000/feedbacks/${id}` , {method : "DELETE"})
+            setfeedbacks( feedbacks.filter((item) => (item.id !== id)))
+        }
         }
 
         const addFeedback = async (text , rating) => {
