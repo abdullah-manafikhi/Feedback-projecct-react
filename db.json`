@@ -1,0 +1,95 @@
+[33mcommit 88f1890c5455ad5fff94c214d2bb6d507fd04822[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Thu Aug 4 13:15:29 2022 +0300
+
+    fixing issues
+
+[33mcommit 18f062a66547fe178af4e2c6517a77eb1120a0e5[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Sun Jun 19 11:34:09 2022 +0300
+
+    adding the delete and update functionality
+
+[33mcommit 87effb6f7f57c9f635782c2764f3f18cb0dd2e35[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Sat Jun 18 20:41:29 2022 +0300
+
+    adding mock server
+
+[33mcommit 741ac0ae6e2148ec82d029d61cdb90317b96fa4a[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Mon Jun 13 21:43:58 2022 +0300
+
+    fixinkg another bug
+
+[33mcommit 2adeeb7a39d93ff6e78a7e020621d5d70d299829[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Mon Jun 13 21:35:52 2022 +0300
+
+    fixing some bugs
+
+[33mcommit 22c9b0b61457c68ce1f3a5ea789b4c3335752661[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Mon Jun 13 21:16:30 2022 +0300
+
+    the project is finishid , but needed to add  some animations
+
+[33mcommit fb6c92e831650a7b32d69ce0ee41c9e6059bf9b9[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Thu Jun 9 17:32:22 2022 +0300
+
+    adding the feedback edit functionality
+
+[33mcommit 99e36cd58b55700545329339529bcf3b37fdd65f[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Wed Jun 8 20:31:46 2022 +0300
+
+    adding feedfbacks using contexts
+
+[33mcommit d5ce1a2253252acef133deed62a1793051e58fe3[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Sat Jun 4 12:29:45 2022 +0300
+
+    fixing responsive issues
+
+[33mcommit c6fbbd547ddf72258b0fb0d98b4547dac629e843[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Sat Jun 4 12:19:39 2022 +0300
+
+    the first mission is finished
+
+[33mcommit ea4c3068d9ff1508c3810981225236090b5d7d0a[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Wed Jun 1 18:59:49 2022 +0300
+
+    fix the delete issue
+
+[33mcommit 10d942559c5c4f8afe9bf8c7d83a8ab76b4ed0b1[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Tue May 31 21:38:56 2022 +0300
+
+    fixing deploying issues
+
+[33mcommit eb100f1bf6f9f0ad6f247686a97de2b3447ab0ff[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Thu May 26 23:45:29 2022 +0300
+
+    the project is finished
+
+[33mcommit c9d0068c6d2b20c5634d8af4fccfd704e12a361c[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Thu May 26 21:22:42 2022 +0300
+
+    Delete method remaining
+
+[33mcommit a6c0378660321c9dfebaa01dcc4fd9e2d792a3e9[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Thu May 26 13:04:52 2022 +0300
+
+    adding the rating stars and the feedback input
+
+[33mcommit 802c4c7a0f166ba479096ef7032b8c7a023458a6[m
+Author: abdullah-manafikhi <abdullahmanafikhi32@gmail.com>
+Date:   Mon May 23 22:12:44 2022 +0300
+
+    this is an initial commit
