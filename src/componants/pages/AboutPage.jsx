@@ -1,5 +1,5 @@
 import Card from '../Card'
-import {BrowserRouter as Router , Route , Routes , Link} from 'react-router-dom'
+import {BrowserRouter as Router , Link} from 'react-router-dom'
 
 
 function AboutPage() {

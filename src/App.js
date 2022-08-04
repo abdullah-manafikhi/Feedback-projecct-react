@@ -2,7 +2,6 @@ import FeedbackList from "./componants/FeedbackList";
 import {BrowserRouter as Router , Route , Routes , Link} from 'react-router-dom'
 import Header from "./componants/Header";
 import Form from "./componants/Form";
-import  {items}  from "./componants/items";
 import AboutPage from "./componants/pages/AboutPage";
 import { useState } from "react";
 import {FaQuestion} from "react-icons/fa";

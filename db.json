@@ -2,33 +2,18 @@
   "feedbacks": [
     {
       "id": 1,
-      "text": "this feedback is coming from the mock backend 3",
-      "rating": "3"
+      "rating": 4,
+      "text": "this is the first feedback"
     },
     {
-      "id": 2,
-      "text": "this feedback is coming from the mock backend 1",
-      "rating": 5
+      "text": "nice project keep going ",
+      "rating": 5,
+      "id": 2
     },
     {
       "id": 3,
-      "text": "this feedback is coming from the mock backend 1",
-      "rating": 2
-    },
-    {
-      "text": "I am Abdullah and this app is awsome!!!!",
-      "rating": 5,
-      "id": 4
-    },
-    {
-      "text": "this is acceptable",
-      "rating": 4,
-      "id": 5
-    },
-    {
-      "text": "this is acceptable",
-      "rating": 4,
-      "id": 6
+      "text": "this is fantastic",
+      "rating": 4
     }
   ]
 }

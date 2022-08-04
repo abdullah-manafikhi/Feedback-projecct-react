@@ -1,6 +1,6 @@
 import Card from "./Card"
 import {FaTrash , FaEdit} from 'react-icons/fa'
-import {useContext , useEffect} from 'react'
+import {useContext} from 'react'
 import FeedbackContext from "./contexts/FeedbackContext"
 
 function FeedbackItem({id , text , rating}) {

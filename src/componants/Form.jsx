@@ -22,7 +22,7 @@ function Form() {
     }, [feedbackEdit])
 
     const handleClick = (e) => {
-        e.preventDefault()
+        window.location.reload();
         if(feedbackEdit.edit === true){
             feedbackEdit.edit = false
             feedbackUpdate(feedbackEdit.item.id , text , rating)
@@ -103,7 +103,7 @@ function Form() {
         </Card>
         <div className="rating__stats">
             <span>{feedbacks.length} reviews</span>
-            <span>{rateAvr}</span>
+            <span>{(rateAvr>0)?rateAvr:""}</span>
         </div>
     </div>
   )
