@@ -33,7 +33,7 @@ export const FeedbackProvider = ({children}) => {
 
         const addFeedback = (text , rating) => {
         setfeedbacks([{
-            id:(feedbacks.length+1),
+            id:(feedbacks.length),
             text: text,
             rating : Number(rating)
          }, ...feedbacks])
