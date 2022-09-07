@@ -25,6 +25,7 @@ function Form() {
         e.preventDefault()
         if(feedbackEdit.edit === true){
             feedbackEdit.edit = false
+            console.log(feedbackEdit.item.id)
             feedbackUpdate(feedbackEdit.item.id , text , rating)
         }
         else {addFeedback(text , rating)}
