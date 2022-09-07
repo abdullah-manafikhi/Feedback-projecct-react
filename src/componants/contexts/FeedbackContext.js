@@ -32,11 +32,13 @@ export const FeedbackProvider = ({children}) => {
         }
 
         const addFeedback = (text , rating) => {
-        setfeedbacks([{
+        setfeedbacks([
+            ...feedbacks,
+            {
             id:(feedbacks.length+1),
             text: text,
             rating : Number(rating)
-         }, ...feedbacks])
+         }])
         }
 
         const editFeedback = (item) => {
